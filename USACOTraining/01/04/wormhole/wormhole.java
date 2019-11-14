@@ -1,15 +1,15 @@
 /*
 ID: ulysses4
 LANG: JAVA
-PROG: template
+PROG: wormhole
 */
 import java.io.*;
 import java.util.*;
-public class template {
-	private static final String PROG = "template";
+public class wormhole {
+	private static final String PROG = "wormhole";
 	
 	private static void actualMain(String[] args) throws IOException {
-		// write programs here
+		out.println("test");
 	}
 	
 	private static InputStream in;

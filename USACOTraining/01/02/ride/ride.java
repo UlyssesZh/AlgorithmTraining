@@ -1,15 +1,21 @@
 /*
 ID: ulysses4
 LANG: JAVA
-PROG: template
+PROG: ride
 */
 import java.io.*;
 import java.util.*;
-public class template {
-	private static final String PROG = "template";
+public class ride {
+	private static final String PROG = "ride";
 	
 	private static void actualMain(String[] args) throws IOException {
-		// write programs here
+		out.println(productOf(scanner.next()) == productOf(scanner.next()) ? "GO" : "STAY");
+	}
+	private static int productOf(String string) {
+		int result = 1;
+		for (int i = 0; i < string.length(); i++)
+			result *= string.charAt(i) - 'A' + 1;
+		return result % 47;
 	}
 	
 	private static InputStream in;
