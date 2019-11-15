@@ -1,0 +1,140 @@
+
+<html>
+<head> <title>Prime Cryptarithm</title> </head>
+<body>
+<center>
+<h1>Prime Cryptarithm</h1>
+</center>
+
+<p><i>(This poorly named task has nothing to do with prime numbers
+or even, really, prime digits. Sorry 'bout that.)</i>
+
+<p>A cryptarithm is usually presented as a pencil-and-paper task in
+which the solver is required to substitute a digit for each of the
+asterisks (or, often, letters) in the manual evaluation of an
+arithmetic term or expression so that the consistent application
+of the digits results in a proper expression. A classic example
+is this cryptarithm, shown with its unique solution:
+
+<pre>
+    SEND            9567       S->9  E->5  N->6  D->7
+  + MORE          + 1085       M->1  O->0  R->8
+  -------        -------
+   MONEY           10652       Y->2
+</pre>
+
+<p> The following cryptarithm is a multiplication problem that can
+be solved by substituting digits from a specified set of N digits
+into the positions marked with *. Since the asterisks are generic, any
+digit from the input set can be used for any of the asterisks; any digit
+may be duplicated as many times as desired.
+
+<p>Consider using the set {2,3,5,7} for the cryptarithm below:
+
+<pre>
+      * * *
+   x    * *
+    -------
+      * * *         <-- partial product 1 -- MUST BE 3 DIGITS LONG
+    * * *           <-- partial product 2 -- MUST BE 3 DIGITS LONG
+    -------
+    * * * *
+</pre>
+
+Digits can appear only in places marked by `*'.  Of course, leading
+zeroes are not allowed.
+
+<p> <b>The partial products must be three digits long</b>, even
+though the general case (see below) might have four digit partial
+products.
+
+<br><br>
+********** Note About Cryptarithm's Multiplication ************
+<br>
+In USA, children are taught to perform multidigit multiplication
+as described here. Consider multiplying a three digit number
+whose digits are 'a', 'b', and 'c' by a two digit number whose
+digits are 'd' and 'e':
+<pre>
+[Note that this diagram shows far more digits in its results than
+the required diagram above which has three digit partial products!]
+
+          a b c     <-- number 'abc'
+        x   d e     <-- number 'de'; the 'x' means 'multiply'
+     -----------
+p1      * * * *     <-- product of e * abc; first star might be 0 (absent)
+p2    * * * *       <-- product of d * abc; first star might be 0 (absent)
+     -----------
+      * * * * *     <-- sum of p1 and p2 (e*abc + 10*d*abc) == de*abc
+
+</pre>
+
+<p>Note that the 'partial products' are as taught in USA schools.
+The first partial product is the product of the final digit of the
+second number and the top number.  The second partial product is
+the product of the first digit of the second number and the top
+number.
+
+<p> Write a program that will find all solutions to the cryptarithm
+above for any subset of supplied non-zero single-digits. Note that
+the multiplicands, partial products, and answers must all conform
+to the cryptarithm's framework.
+
+<h3>PROGRAM NAME: crypt1</h3>
+
+<h3>INPUT FORMAT</h3>
+
+<table border="1">
+<tr> <td> Line 1: </td> <td> N, the number of digits that will be used</td>
+<tr> <td> Line 2: </td> <td>N space separated non-zero digits with which to solve the cryptarithm </td>
+</table>
+
+<h3>SAMPLE INPUT (file crypt1.in) </h3>
+
+<pre>
+5
+2 3 4 6 8
+</pre>
+
+<h3>OUTPUT FORMAT</h3>
+
+<p>A single line with the total number of solutions.  Here is the
+one and only solution for the sample input:
+
+<pre>
+      2 2 2
+    x   2 2
+     ------
+      4 4 4
+    4 4 4
+  ---------
+    4 8 8 4
+</pre>
+
+<h3>SAMPLE OUTPUT (file crypt1.out)</h3>
+
+<pre>
+1
+</pre>
+
+<h3>OUTPUT DETAILS</h3>
+<p>
+Here's why 222x22 works: 3 digits times 2 digits yields two (equal!)
+partial products, each of three digits (as required).  The answer
+has four digits, as required.  Each digit used {2, 4, 8} is in the
+supplied set {2, 3, 4, 6, 8}.
+
+<p>Why 222x23 doesn't work:
+
+<pre>
+      2 2 2   <-- OK:  three digits, all members of {2, 3, 4, 6, 8}
+        2 3   <-- OK:  two digits, all members of {2, 3, 4, 6, 8}
+     ------
+      6 6 6   <-- OK:  <b>three</b> digits, all members of {2, 3, 4, 6, 8}
+    4 4 4     <-- OK:  <b>three</b> digits, all members of {2, 3, 4, 6, 8}
+  ---------
+    5 1 0 6   <-- NOT OK: four digits (good), but 5, 1, and 0 are not in
+                                                    {2, 3, 4, 6, 8}
+</pre>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+<head> <title>Problem 90: Dual Palindromes</title> </head>
+<body>
+<center>
+<h1>Dual Palindromes</h1>
+Mario Cruz (Colombia) & Hugo Rickeboer (Argentina)
+</center>
+
+<p> A number that reads the same from right to left as when read from
+left to right is called a palindrome.  The number 12321 is a palindrome;
+the number 77778 is not.  Of course, palindromes have neither leading
+nor trailing zeroes, so 0220 is not a palindrome.
+
+<p> The number 21 (base 10) is not palindrome in base 10, but the
+number 21 (base 10) is, in fact, a palindrome in base 2 (10101).
+
+<p>
+Write a program that reads two numbers (expressed in base 10):
+<ul>
+        <li> N (1 &lt;= N &lt;= 15) 
+        <li> S (0 &lt; S &lt; 10000)
+</ul>
+and then finds and prints (in base 10) the first N numbers strictly
+greater than S that are palindromic when written in two or more
+number bases (2 &lt;= base &lt;= 10).
+
+<p> Solutions to this problem do not require manipulating integers
+larger than the standard 32 bits.
+
+<h3>PROGRAM NAME: dualpal</h3>
+
+<h3>INPUT FORMAT</h3>
+
+<p>A single line with space separated integers N and S.
+
+<h3>SAMPLE INPUT (file dualpal.in) </h3>
+
+<pre>
+3 25
+</pre>
+
+<h3>OUTPUT FORMAT</h3>
+
+N lines, each with a base 10 number that is palindromic when expressed
+in at least two of the bases 2..10.  The numbers should be listed
+in order from smallest to largest.
+
+<h3>SAMPLE OUTPUT (file dualpal.out)</h3>
+
+<pre>
+26
+27
+28
+</pre>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<html>
+<head><title>Submitting Solutions
+</title></head>
+<center>
+<h1>Submitting Solutions</h1>
+</center>
+
+<p>The USACO Training Program features an automatic grading system
+for your homework problems. You submit your programs from the problem
+page itself; they are compiled and graded; the results are conveyed
+back to you -- all within a few seconds.
+
+<p>C/C++/C++11, PASCAL, Python, and Java are available.  This system
+uses the GNU GCC compilation suite for C/C++/C++11 programs and the
+Free Pascal system for Pascal programs. Python is version 2.7.  The
+Java compiler is Oracle's most recent release.
+
+<p>The grading system compilers are those formerly used at the IOI.
+
+<p>These newer compilers uses 32 bit int's; the Borland compilers
+use 16 bit int's.  DO NOT GET IN TROUBLE BECAUSE OF THIS!
+
+<p>Submit solutions via the web by typing the name of the file
+containing the source code into the 'Submit a file:' box at the
+bottom of problem description pages..
+
+<p>Program submissions require simple <b>Header comments</b>: your
+ID (i.e., your USACO login name), the name of the program (which
+will be given in each programming assignment, and the language used.
+See the examples below to get the idea.
+
+<p>Every training page problem has input and output. Currently, the
+input appears in a file named 'probname.in' (e.g., if the problem
+name is 'ride', then the input filename is 'ride.in'). Output must
+be written to a file named 'probname.out' (i.e., 'ride.out' for the
+'ride' problem).
+
+<hr>
+<h2>The First Challenge</h2>
+
+<p>The simplest programming challenge is named 'test' and requires
+you to read a pair of small integers from a single input line in
+the file 'test.in' and print their sum to the file 'test.out'.
+
+<p>Below is a simple solution in the 'C' programming language. Note
+the use of 'exit (0);', which is usually required to exit properly.
+<pre>
+/*
+ID: your_id_here
+LANG: C
+TASK: test
+*/
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+void
+main () {
+    FILE *fin  = fopen ("test.in", "r");
+    FILE *fout = fopen ("test.out", "w");
+    int a, b;
+    fscanf (fin, "%d %d", &amp;a, &amp;b);      /* the two input integers */
+    fprintf (fout, "%d\n", a+b);
+    exit (0);
+}
+</pre>
+
+<p>Below is a simple solution in the C++ programming language. Note
+the use of 'return (0);', which is usually required to exit properly.
+<pre>
+/* Use the slash-star style comments or the system won't see your
+   identification information */
+/*
+ID: your_id_here
+TASK: test
+LANG: C++                 
+*/
+/* LANG can be C++11 or C++14 for those more recent releases */
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main() {
+    ofstream fout ("test.out");
+    ifstream fin ("test.in");
+    int a, b;
+    fin &gt;&gt; a &gt;&gt; b;
+    fout &lt;&lt; a+b &lt;&lt; endl;
+    return 0;
+}
+</pre>
+
+<p>Below is a simple solution in the PASCAL programming language:
+<pre>
+{
+ID: your_id_here
+TASK: test
+LANG: PASCAL
+}
+Program Test;
+Var fin, fout: text;
+    a, b: word;
+Begin
+    Assign(fin, 'test.in'); Reset(fin);
+    Assign(fout, 'test.out'); Rewrite(fout);
+    Readln(fin, a, b);
+    Writeln(fout, a+b);
+    Close(fout);
+End.
+</pre>
+
+<p>Below is a simple solution in the 'Python' programming language.
+Both Python 2 and Python 3 are available; specify language PYTHON2
+or PYTHON3 as needed. Notes:
+<ul>
+<li>Header is on left margin with <tt>"""</tt> above and below. </li>
+<li>Put your own USACO training ID in the ID field.</li>
+<li>Python must be in all capital letters: PYTHON2 or PYTHON3.</li>
+<li>The TASK name changes for each different problem you submit; this
+task is known as 'test'.</li>
+<li>Copy and paste these lines to a file and submit it for testing.</li>
+<li>To print debug output, add '<tt>import sys</tt>' just below the
+ID headers and then use <tt>sys.stderr.write('message')</tt>. Even if
+your program's output is wrong, the message will be displayed for you.
+<li>If you use any 'import' or 'from ... import' statements, make
+sure they are not indented, flush with the large margin.
+</ul>
+<pre>
+"""
+ID: your_id_here
+LANG: PYTHON2
+TASK: test
+"""
+fin = open ('test.in', 'r')
+fout = open ('test.out', 'w')
+x,y = map(int, fin.readline().split())
+sum = x+y
+fout.write (str(sum) + '\n')
+fout.close()
+</pre>
+
+<p>And here is the same program, this time in JAVA. Note that the
+program presumes the file opens will succeed, which they will:
+<pre>
+/* Use the slash-star style comments or the system won't see your
+   identification information */
+/*
+ID: your_id_here
+LANG: JAVA
+TASK: test
+*/
+import java.io.*;
+import java.util.*;
+
+class test {
+  public static void main (String [] args) throws IOException {
+    // Use BufferedReader rather than RandomAccessFile; it's much faster
+    BufferedReader f = new BufferedReader(new FileReader("test.in"));
+                                                  // input file name goes above
+    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("test.out")));
+    // Use StringTokenizer vs. readLine/split -- lots faster
+    StringTokenizer st = new StringTokenizer(f.readLine());
+						  // Get line, break into tokens
+    int i1 = Integer.parseInt(st.nextToken());    // first integer
+    int i2 = Integer.parseInt(st.nextToken());    // second integer
+    out.println(i1+i2);                           // output result
+    out.close();                                  // close the output file
+  }
+}
+</pre>
+<b>Important: BufferedReader and StringTokenizer are far more
+efficient than many other schemes for reading input. They can make
+a huge difference in the efficiency of your program! Use them!</b>
+
+<hr>
+
+<p>You can try as many different things (subject to the caveats
+below) as you like to see how the grading system  works. Theoretically,
+you can't break it or crash it. If you see a problem, please let
+me know.
+
+<p>The restrictions are few:
+<ul>
+<li>One second runtime limit unless other specified (programs are run
+on a modern processor but <b>times are scaled to a 700 MHz Pentium III</b>)</li>
+<li>About 16MB datasize limit</li>
+<li>About 1MB stacksize limit</li>
+<li>Be sure your program exits with status 0</li>
+<li>Be sure you print complete lines (<b>with terminating newline</b>),
+not just a few words or numbers</li>
+<li>Don't use files other than the specified input, output, and auxiliary files</li>
+<li>Other common sense rules that need not be listed</li>
+</ul>
+
+<p>The rules are simple:
+<ul>
+<li>Don't try to cheat.</li>
+<li><b>Don't just print the answers</b>, you must calculate them
+in your program. If you just print answers, your login ID might be
+removed.</li>
+<li>Don't try to look at other files on the system or use other
+schemes to break security</li>
+<li>Don't try to break common sense rules of privacy</li>
+<li>Please report anomalous behavior to me right away
+    (<a href="mailto:rob.kolstad@gmail.com">&lt;rob.kolstad@gmail.com&gt;</a>) </li>
+<li>Have as much fun as possible</li>
+<li>Earn a trip to the IOI and other exotic contests!</li>
+</ul>
+
+<p>Some hints:
+<ul>
+<li>Both stderr and stdout are returned to you when errors occur</li>
+<li>Feel free to ask questions and send in comments</li>
+<li>Your reported output has `_'s substituted for spaces</li>
+<li>Include this comment if you use try/catch/throw in C++: <tt>/*pragma&nbsp;handle-exceptions*/</tt>
+</ul>
+
+<p>Compiler comments (please send in new compiler comments as you find them):
+<ul>
+<li>We're using g++ (a.k.a. djgpp on PCs), Free Pascal, and gjc
+<li>In C/C++, ints are 32 bits (char is 8; short is 16; long is 32; long
+long is 64)
+<li>some libraries have new names; some have different or missing
+functions
+<li>stricmp doesn't exist; use strcmp for string compares
+<li>strrev does not exist
+<li>neither itoa nor ltoa exists (use sprintf instead)
+<li>No need for <i>huge</i> declarations - pointers already go everywhere
+<li>Pascal users: be sure to "close" your output file or the
+output might not appear</li>
+</ul>
+
+</td></tr></table>
+
+<p>Give it a try! Submit one of the programs above, <font
+color="#FF0000">using your own ID</font>. Mouse it off into a file
+then type in the name of the text file that contains the source:
+</body></html>

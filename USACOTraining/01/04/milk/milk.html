@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>Mixing Milk</title>
+</head>
+
+<body>
+<center>
+<h1>Mixing Milk</h1>
+</center>
+
+<p>The Merry Milk Makers company buys milk from farmers, packages
+it into attractive 1- and 2-Unit bottles, and then sells that milk
+to grocery stores so we can each start our day with delicious cereal
+and milk.
+
+<p>Since milk packaging is such a difficult business in which to
+make money, it is important to keep the costs as low as possible.
+Help Merry Milk Makers purchase the farmers' milk in the cheapest
+possible manner. The MMM company has an extraordinarily talented
+marketing department and knows precisely how much milk they need
+each day to package for their customers.
+
+<p>The company has contracts with several farmers from whom they
+may purchase milk, and each farmer has a (potentially) different
+price at which they sell milk to the packing plant.
+Of course, a herd of cows can only produce so much milk each
+day, so the farmers already know how much milk they will have
+available.
+
+<p>Each day, Merry Milk Makers can purchase an integer number of
+units of milk from each farmer, a number that is always less than
+or equal to the farmer's limit (and might be the entire production
+from that farmer, none of the production, or any integer in between).
+
+<p>Given:
+<ul>
+<li>The Merry Milk Makers' daily requirement of milk
+<li>The cost per unit for milk from each farmer
+<li>The amount of milk available from each farmer
+</ul>
+calculate the minimum amount of money that Merry Milk Makers must
+spend to meet their daily need for milk.
+
+<p>Note: The total milk produced per day by the farmers will always
+be sufficient to meet the demands of the Merry Milk Makers even if
+the prices are high.
+
+<h3>PROGRAM NAME: milk</h3>
+
+<h3>INPUT FORMAT</h3>
+
+<table>
+<tr> <td> Line 1: </td> <td> Two integers, N and M.
+<br>The first value, N,  (0 &lt;= N &lt;=
+2,000,000) is the amount of milk that Merry Milk Makers wants per day.
+<br>The second, M, (0 &lt;= M &lt;= 5,000) is the number of farmers
+that they may buy from.
+<br>
+</td>
+<tr> <td> Lines 2 through M+1: </td> <td> The next M lines each contain
+two integers: P<sub>i</sub> and A<sub>i</sub>. <br> P<sub>i</sub> (0 &lt;= P<sub>i</sub> &lt;= 1,000) is price in
+cents that farmer i charges.<br>  A<sub>i</sub> (0 &lt;= Ai &lt;= 2,000,000) is the amount
+of milk that farmer i can sell to Merry Milk Makers per day.
+</td>
+</table>
+<p>
+
+<h3>SAMPLE INPUT (file milk.in) </h3>
+
+<pre>
+100 5
+5 20
+9 40
+3 10
+8 80
+6 30
+</pre>
+
+<h3>INPUT EXPLANATION</h3>
+<tt>100 5</tt> -- MMM wants 100 units of milk from 5 farmers<br>
+<tt>5 20</tt> -- Farmer 1 says, "I can sell you 20 units at 5 cents per unit"<br>
+<tt>9 40</tt>         etc.<br>
+<tt>3 10</tt> -- Farmer 3 says, "I can sell you 10 units at 3 cents per unit"<br>
+<tt>8 80</tt>         etc.<br>
+<tt>6 30</tt> -- Farmer 5 says, "I can sell you 30 units at 6 cents per unit"<br>
+
+
+<h3>OUTPUT FORMAT</h3>
+
+<p> A single line with a single integer that is the minimum cost
+that Merry Milk Makers must pay for one day's milk.
+
+<h3>SAMPLE OUTPUT (file milk.out)</h3>
+
+<pre>
+630
+</pre>
+
+<h3>OUTPUT EXPLANATION</h3>
+Here's how the MMM company spent only 630 cents to purchase 100
+units of milk:
+
+<table cellspacing=5>
+<tr> <th>Price<br>per unit</td>
+     <th>Units<br>available</td>
+     <th>Units<br>bought</td>
+     <th>Price *<br># units</td>
+     <th>Total cost</td>
+     <th>Notes</td>
+</tr>
+
+<tr><td align=center>5</td>  <td align=center>20</td>  <td align=center>20</td> <td align=center>5*20</td> <td align=center>100</td></tr>
+<tr><td align=center>9</td>  <td align=center>40</td>  <td align=center>0</td>
+        <td></td> <td></td> <td>Bought no milk from farmer 2</td></tr>
+<tr><td align=center>3</td>  <td align=center>10</td>  <td align=center>10</td> <td align=center>3*10</td> <td align=center> 30</td></tr>
+<tr><td align=center>8</td>  <td align=center>80</td>  <td align=center>40</td> <td align=center>8*40</td> <td align=center>320</td> <td>Did not buy all 80 units!</td></tr>
+<tr><td align=center>6</td>  <td align=center>30</td>  <td align=center>30</td> <td align=center>6*30</td> <td align=center>180</td></tr>
+<tr><td align=center><b>Total</b><td align=center>180</td> 
+                <td align=center><b>100</b></td> <td></td> <td align=center><b>630</b></td> <td>Cheapest total cost</td></tr>
+</table>
+
+</body>
+</html>
