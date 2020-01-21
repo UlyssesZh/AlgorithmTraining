@@ -3,12 +3,14 @@ ID: ulysses4
 PROG: test
 LANG: PYTHON3
 """
-fin = open('test.in', 'r')
-fout = open('test.out', 'w')
+PROG = 'test'
+fin = open(PROG + '.in', 'r')
+fout = open(PROG + '.out', 'w')
+
 def main():
-	# write programs here
-	pass
-x,y = map(int, fin.readline().split())
-sum = x+y
-fout.write (str(sum) + '\n')
+	x, y = map(int, fin.readline().split())
+	fout.write(str(x + y) + '\n')
+
+main()
+fin.close()
 fout.close()

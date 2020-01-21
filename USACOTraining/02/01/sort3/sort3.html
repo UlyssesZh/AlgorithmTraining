@@ -1,0 +1,64 @@
+<html lang="en">
+<head> <title>Problem 54: Sorting a Three-Valued Sequence</title> </head>
+<body>
+<div style="text-align: center">
+    <h1>Problem: Sorting a Three-Valued Sequence </h1>
+    <b>IOI'96 - Day 2</b>
+</div>
+
+<p> Sorting is one of the most frequently performed computational tasks.
+    Consider the special sorting problem in which the records to be sorted
+    have at most<I> three</I> different key values. This happens for instance
+    when we sort medalists of a competition according to medal value, that
+    is, gold medalists come first, followed by silver, and bronze medalists
+    come last.
+
+<P> In this task the possible key values are the integers 1, 2 and 3.
+    The required sorting order is non-decreasing. However, sorting has to
+    be accomplished by a sequence of exchange operations. An exchange
+    operation, defined by two position numbers p and q, exchanges the elements
+    in positions p and q.
+
+<P> You are given a sequence of key values. Write a program that computes
+    the minimal number of exchange operations that are necessary to make
+    the sequence sorted.
+
+
+<h3>PROGRAM NAME: sort3</h3>
+
+<h3>INPUT FORMAT</h3>
+
+<table>
+    <tr> <td> Line 1: </td> <td> N (1 &lt;= N &lt;= 1000), the number of
+        records to be sorted</td> </tr>
+    <tr> <td> Lines 2-N+1: </td> <td> A single integer from the set {1, 2, 3}</td> </tr>
+</table>
+
+<h3>SAMPLE INPUT (file sort3.in) </h3>
+
+<pre>
+9
+2
+2
+1
+3
+3
+3
+2
+3
+1
+</pre>
+
+<h3>OUTPUT FORMAT</h3>
+
+A single line containing the number of exchanges required
+
+<h3>SAMPLE OUTPUT (file sort3.out)</h3>
+
+<pre>
+4
+</pre>
+<p><a href="_analysis.html">The analysis</a></p>
+<p><a href="../../../index.html">Training Gateway</a></p>
+</body>
+</html>

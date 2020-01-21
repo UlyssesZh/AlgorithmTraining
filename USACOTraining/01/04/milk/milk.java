@@ -8,7 +8,7 @@ import java.util.*;
 public class milk {
 	private static final String PROG = "milk";
 	
-	private static void actualMain(String[] args) throws IOException {
+	private static void actualMain() {
 		int N = scanner.nextInt(); // requirement
 		int M = scanner.nextInt(); // farmers number
 		int[] P = new int[M]; // prices
@@ -42,7 +42,7 @@ public class milk {
 		in = new FileInputStream(PROG + ".in");
 		out = new PrintStream(PROG + ".out");
 		scanner = new Scanner(in);
-		actualMain(args);
+		actualMain();
 		in.close();
 		out.close();
 		scanner.close();

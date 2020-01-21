@@ -27,7 +27,7 @@ public class gift1 {
 			names = new String[NG];
 		}
 	}
-	private static void actualMain(String[] args) throws IOException {
+	private static void actualMain() {
 		int NP = scanner.nextInt();
 		String[] names = new String[NP];
 		for (int i = 0; i < NP; i++) names[i] = scanner.next();
@@ -63,7 +63,7 @@ public class gift1 {
 		in = new FileInputStream(PROG + ".in");
 		out = new PrintStream(PROG + ".out");
 		scanner = new Scanner(in);
-		actualMain(args);
+		actualMain();
 		in.close();
 		out.close();
 		scanner.close();

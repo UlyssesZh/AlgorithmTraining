@@ -29,7 +29,7 @@ public class transform {
 				if (pattern1[row][col] != pattern2[row][col]) return false;
 		return true;
 	}
-	private static void actualMain(String[] args) throws IOException {
+	private static void actualMain() {
 		N = scanner.nextInt();
 		char[][] pattern = new char[N][N];
 		char[][] transformed = new char[N][N];
@@ -75,7 +75,7 @@ public class transform {
 		in = new FileInputStream(PROG + ".in");
 		out = new PrintStream(PROG + ".out");
 		scanner = new Scanner(in);
-		actualMain(args);
+		actualMain();
 		in.close();
 		out.close();
 		scanner.close();

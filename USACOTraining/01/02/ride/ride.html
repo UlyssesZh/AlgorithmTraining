@@ -1,11 +1,11 @@
-<html>
+<html lang="en">
 <head>
-<title>Your Ride Is Here</title>
+<title>Problem 108: Your Ride Is Here</title>
 </head>
-<center>
-<h1>Your Ride Is Here</h1>
-</center>
-
+<div style="text-align: center">
+<h1>Problem: Your Ride Is Here</h1>
+</div>
+<body>
 <p> It is a well-known fact that behind every good comet is a UFO. These
 UFOs often come to collect loyal supporters from here on Earth.
 Unfortunately, they only have room to pick up one group of followers on
@@ -38,16 +38,16 @@ letters with no spaces or punctuation, up to 6 characters long.
 Examples:
 <p>
 <table>
-<tr> <td align="center"> Input </td> <td align="center"> Output </td> </tr>
+<tr> <td> Input </td> <td> Output </td> </tr>
 <tr>
 <td>
 <pre>
 COMETQ
 HVNGAT
-</pre> </td> <td align="center" valign="Center"><tt>GO</tt> </td> </tr>
+</pre> </td> <td><tt>GO</tt> </td> </tr>
 <tr><td><pre>
 ABSTAR
-USACO </pre> </td> <td align="center" valign="Center"><tt> STAY </tt> </td> </tr>
+USACO </pre> </td> <td><tt> STAY </tt> </td> </tr>
 </table>
 
 <h3>PROGRAM NAME: ride</h3>
@@ -94,15 +94,14 @@ GO
 <h3>OUTPUT EXPLANATION</h3>
 
 Converting the letters to numbers:
-<div style='height:8px;'></div>
 <table>
-<tr><td align=center><tt>C</tt><td align=center><tt>O</tt><td align=center><tt>M<td align=center><tt>E<td align=center><tt>T<td align=center><tt>Q<td align=center></tr>
-<tr><td align=center><tt>3</tt><td align=center><tt>15</tt><td align=center><tt>13<td align=center><tt>5<td align=center><tt>20<td align=center><tt>17<td align=center></tr>
+<tr><td><tt>C</tt><td><tt>O</tt><td><tt>M<td><tt>E<td><tt>T<td><tt>Q<td></tr>
+<tr><td><tt>3</tt><td><tt>15</tt><td><tt>13<td><tt>5<td><tt>20<td><tt>17<td></tr>
 
-<tr colspan=4><td><div style='height:8px;'></div>
+<tr><td><div style='height:8px;'></div>
 
-<tr><td align=center><tt>H</tt><td align=center><tt>V</tt><td align=center><tt>N<td align=center><tt>G<td align=center><tt>A<td align=center><tt>T</tr>
-<tr><td align=center><tt>8</tt><td align=center><tt>22</tt><td align=center><tt>14<td align=center><tt>7<td align=center><tt>1</tt><td align=center><tt>20<td align=center></tr>
+    <tr><td><tt>H</tt><td><tt>V</tt><td><tt>N<td><tt>G<td><tt>A<td><tt>T</tt></tr>
+<tr><td><tt>8</tt><td><tt>22</tt><td><tt>14<td><tt>7<td><tt>1</tt><td><tt>20<td></tr>
 </table>
 
 then calculate the product mod 47:
@@ -113,5 +112,7 @@ then calculate the product mod 47:
 
 <p>Because both products evaluate to 27 (when modded by 47), the
 mission is 'GO'.
+<p><a href="_analysis.html">The analysis</a></p>
+<p><a href="../../../index.html">Training Gateway</a></p>
 </body>
 </html>

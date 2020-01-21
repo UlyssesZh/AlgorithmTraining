@@ -128,7 +128,7 @@ public class beads {
 			return stringBuilder.toString();
 		}
 	}*/
-	private static void actualMain(String[] args) throws IOException {
+	private static void actualMain() {
 		int n = scanner.nextInt();
 		String s = scanner.next();
 		/*BeadsInfo beadsInfo = BeadsInfo.fromString(s + s);
@@ -185,7 +185,7 @@ public class beads {
 		in = new FileInputStream(PROG + ".in");
 		out = new PrintStream(PROG + ".out");
 		scanner = new Scanner(in);
-		actualMain(args);
+		actualMain();
 		in.close();
 		out.close();
 		scanner.close();

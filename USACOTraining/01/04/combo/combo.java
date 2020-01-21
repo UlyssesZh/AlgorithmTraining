@@ -27,7 +27,7 @@ public class combo {
 			if (arrayEqual(solutions.get(i), solution)) return;
 		solutions.add(solution);
 	}
-	private static void actualMain(String[] args) throws IOException {
+	private static void actualMain() {
 		N = scanner.nextInt();
 		int[] farmer = new int[] {scanner.nextInt(),
 			scanner.nextInt(), scanner.nextInt()};
@@ -49,7 +49,7 @@ public class combo {
 		in = new FileInputStream(PROG + ".in");
 		out = new PrintStream(PROG + ".out");
 		scanner = new Scanner(in);
-		actualMain(args);
+		actualMain();
 		in.close();
 		out.close();
 		scanner.close();

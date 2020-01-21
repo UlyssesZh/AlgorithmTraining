@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <title>Analysis: Combination Lock</title>
+</head>
+<body>
+<div style="text-align: center">
+    <h1>Analysis: Combination Lock</h1>
+    <b>Brian Dean</b>
+</div>
+<iframe width="640" height="480" src="//www.youtube.com/embed/nPs1fvOBG9Y?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p> The process of solving this problem is described in the video above;
+    the final code is shown below. </p>
+
+<pre>
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;cstdlib&gt;
+using namespace std;
+
+int N;
+
+bool close(int a, int b)
+{
+  if (abs(a-b) &lt;= 2) return true;
+  if (abs(a-b) &gt;= N-2) return true;
+  return false;
+}
+
+bool close_enough(int n1, int n2, int n3,
+		  int c1, int c2, int c3)
+{
+  return close(n1,c1) && close(n2,c2) && close(n3,c3);
+}
+
+int main(void)
+{
+  int f1, f2, f3;
+  int m1, m2, m3;
+
+  ifstream fin("combo.in");
+  fin &gt;&gt; N;
+  fin &gt;&gt; f1 &gt;&gt; f2 &gt;&gt; f3;
+  fin &gt;&gt; m1 &gt;&gt; m2 &gt;&gt; m3;
+  fin.close();
+
+  int total = 0;
+  for (int n1=1; n1&lt;=N; n1++)
+    for (int n2=1; n2&lt;=N; n2++)
+      for (int n3=1; n3&lt;=N; n3++)
+	if (close_enough(n1,n2,n3,f1,f2,f3) ||
+	    close_enough(n1,n2,n3,m1,m2,m3))
+	  total++;
+
+  ofstream fout("combo.out");
+  fout &lt;&lt; total &lt;&lt; "\n";
+  fout.close();
+
+  return 0;
+}
+</pre>
+<p><a href="combo.html">The problem</a></p>
+<p><a href="../../../index.html">Training Gateway</a></p>
+</body>
+</html>

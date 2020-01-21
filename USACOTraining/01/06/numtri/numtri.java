@@ -8,7 +8,7 @@ import java.util.*;
 public class numtri {
 	private static final String PROG = "numtri";
 	
-	private static void actualMain(String[] args) throws IOException {
+	private static void actualMain() {
 		int R = scanner.nextInt();
 		int[] s = new int[R];
 		int[] n = new int[R];
@@ -29,7 +29,7 @@ public class numtri {
 		in = new FileInputStream(PROG + ".in");
 		out = new PrintStream(PROG + ".out");
 		scanner = new Scanner(in);
-		actualMain(args);
+		actualMain();
 		in.close();
 		out.close();
 		scanner.close();

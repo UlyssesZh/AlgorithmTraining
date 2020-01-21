@@ -8,7 +8,7 @@ import java.util.*;
 public class test {
 	private static final String PROG = "test";
 	
-	private static void actualMain(String[] args) throws IOException {
+	private static void actualMain() {
 		out.println(scanner.nextInt() + scanner.nextInt());
 	}
 	
@@ -19,7 +19,7 @@ public class test {
 		in = new FileInputStream(PROG + ".in");
 		out = new PrintStream(PROG + ".out");
 		scanner = new Scanner(in);
-		actualMain(args);
+		actualMain();
 		in.close();
 		out.close();
 		scanner.close();

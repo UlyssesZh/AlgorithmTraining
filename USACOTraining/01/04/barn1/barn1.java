@@ -8,7 +8,7 @@ import java.util.*;
 public class barn1 {
 	private static final String PROG = "barn1";
 
-	private static void actualMain(String[] args) throws IOException {
+	private static void actualMain() {
 		int M = scanner.nextInt(); // max number of boards
 		int S = scanner.nextInt(); // number of stalls
 		int C = scanner.nextInt(); // number of cows
@@ -46,7 +46,7 @@ public class barn1 {
 		in = new FileInputStream(PROG + ".in");
 		out = new PrintStream(PROG + ".out");
 		scanner = new Scanner(in);
-		actualMain(args);
+		actualMain();
 		in.close();
 		out.close();
 		scanner.close();

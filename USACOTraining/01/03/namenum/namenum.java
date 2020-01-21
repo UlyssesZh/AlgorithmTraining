@@ -40,7 +40,7 @@ public class namenum {
 			if (CHARS[digit][i] == aChar) return true;
 		return false;
 	}
-	private static void actualMain(String[] args) throws IOException {
+	private static void actualMain() {
 		String numberString = scanner.next();
 		int[] digits = new int[numberString.length()];
 		for (int i = 0; i < numberString.length(); i++)
@@ -61,7 +61,7 @@ public class namenum {
 		in = new FileInputStream(PROG + ".in");
 		out = new PrintStream(PROG + ".out");
 		scanner = new Scanner(in);
-		actualMain(args);
+		actualMain();
 		in.close();
 		out.close();
 		scanner.close();
