@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/prim" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/qsnetwork" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/truckhistory" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/uniquemst" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dijkstra" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dominoeffect" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/idiomgame" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bellman" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/arbitrage" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/doors" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ton" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swordfish" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/shop" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/rbtree" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pick" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/kruskal" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/floyd" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/fibernetwork" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/heavycargo" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/spfa" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cowparty" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

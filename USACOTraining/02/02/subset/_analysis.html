@@ -1,0 +1,147 @@
+<html lang="en">
+<head>
+	<title>Analysis: Subset Sums</title>
+</head>
+<body>
+<div style="text-align: center;"><h1>Analysis: Subset Sums</h1>
+<b>Rob Kolstad</b></div>
+<p>This is a classic dynamic programming problem.
+
+<p>The basis of a handful of DP algorithms is the "take-an-old-count,
+	add some to it, and carry it forward again".  Subset sums is
+	a classic example of this.
+
+<p>First, let's rephrase the task as, "Given N, calculate the total
+	number a partition must sum to {n*(n+1)/2 /2}, and find the
+	number of ways to form that sum by adding 1, 2, 3, ... N."
+
+<p>Thus, for N=7, the entire set of numbers 1..7 sums to 7*8/2 which
+	is 56/2=28. And, if we partitioned that into two equal-sum sets,
+	they'd pretty much have to sum to ** 14 **.
+
+<p>Now comes the 'DP trick' *for this class of DP tasks*. We'll set up
+	a little one-dimensional array called... 'buckets'. In this array reside
+	the counts of ways you can build various numbers given a set
+	of numbers 1.. m.  Thus, over time, buckets looks like this:
+
+<pre>Lev::   0  1  2  3  4  5  6  7  8  9 10 11  ...
+  1::   1  1  0  0  0  0  0  0  0  0  0  0  ...
+  2::   1  1  1  1  0  0  0  0  0  0  0  0  ...
+  3::   1  1  1  2  1  1  1  0  0  0  0  0  ...
+  4::   1  1  1  2  2  2  2  2  1  1  1  0  ...</pre>
+
+<p>If we look at row 1::, we see "There is 1 way to make a 0 and
+	one way to build a 1 using the set {1}"
+
+<p>If we look at row 2::, we see "There is 1 way to make a 0 (this
+	is always true), one way to make a 1, one way to make a 2,
+	and one way to make a 3" -- the 3 is from 1 + 2
+
+<p>If we look at row 3::, we see: "... *two* ways to make a 3 ...". Since
+	you can make a 3 with: 3 or 1+2, now we're seeing some growth.
+
+<p>Row 4:: says "... two ways for a 3, two ways for a 4, two ways for a 5,
+	two ways for a 6, two ways for a 7, ..." and one way for many others.
+
+<p>We calculate row N+1 from row N.
+
+<p>For each bucket j in our set:
+
+<pre>newbucket[j + added_number] += olderbucket[j]</pre>
+
+<p>So if the added_number is 3, and you're processing column 4,
+<pre>
+newbucket [4 + 3] += olderbucket[4]
+</pre>
+which is to say, "With a 3 in our hand, realize we can create
+a 7 by olderbucket[4] ways" and mark that down.
+
+<p>The above sentence is the key.  Once you see that, everything
+	becomes clear.
+
+<p>The answer is found for N=7 by looking in bucket 14 and dividing
+	the answer by 2, since we count each partitioning twice (once in
+	each of two orderings).
+
+<p>Hal Burch's solution is shown below.
+<pre>
+
+/* Calculate how many two-way partitions of {1, 2, ..., N} are
+   even splits (the sums of the elements of both partition are equal) */
+
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define MAXSUM 637
+
+unsigned int numsets[637][51];
+
+int max;
+unsigned int sum;
+
+main(int argc, char **argv)
+{
+  int lv, lv2, lv3;
+  int cnt;
+  FILE *fin, *fout;
+
+  fin = fopen ("subset.in", "r");
+  fscanf(fin, "%d", &amp;max);
+  fclose (fin);
+  fout = fopen("subset.out", "w");
+
+  if ((max % 4) == 1 || (max % 4) == 2) {
+    fprintf (stderr, "0\n");
+    exit(1);
+  }
+
+  sum = max * (max+1) / 4;
+
+    memset(numsets, 0, sizeof(numsets[0]));
+    numsets[0][0] = 1;
+    for (lv = 1; lv &lt; max; lv++) {
+      for (lv2 = 0; lv2 &lt;= sum; lv2++)
+        numsets[lv2][lv] = numsets[lv2][lv-1];
+      for (lv2 = 0; lv2 &lt;= sum-lv; lv2++)
+        numsets[lv2+lv][lv] += numsets[lv2][lv-1];
+    }
+
+    fprintf (fout, "%u\n", numsets[sum][max-1]);
+    fclose (fout);
+  exit (0);
+}
+</pre>
+and here's an even more concise solution from Nick Tomitov of Bulgaria:
+<pre>
+#include &lt;fstream&gt;
+using namespace std;
+const unsigned int MAX_SUM = 1024;
+int n;
+unsigned long long int dyn[MAX_SUM];
+ifstream fin ("subset.in");
+ofstream fout ("subset.out");
+
+int main() {
+    fin &gt;&gt; n;
+    fin.close();
+    int s = n*(n+1);
+    if (s % 4) {
+        fout &lt;&lt; 0 &lt;&lt; endl;
+        fout.close ();
+        return ;
+    }
+    s /= 4;
+    int i, j;
+    dyn [0] = 1;
+    for (i = 1; i &lt;= n; i++)
+        for (j = s; j &gt;= i; j--)
+            dyn[j] += dyn[j-i];
+    fout &lt;&lt; (dyn[s]/2) &lt;&lt; endl;
+    fout.close();
+    return 0;
+}
+</pre>
+<p><a href="subset.html">The problem</a></p>
+<p><a href="../../../index.html">Training Gateway</a></p>
+</body>
+</html>
