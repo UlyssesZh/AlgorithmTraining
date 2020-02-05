@@ -11,7 +11,7 @@ int avan, avac[10005], avav[10005], dp[10005][10005];
 void swap(int& a, int& b) {
 	int t = a; a = b; b = t;
 }
-void bag() {
+void bag01() {
 	for (int w = 0; w <= m; w++) dp[0][w] = 0;
 	for (int i = 1; i <= avan; i++) dp[i][0] = 0;
 	for (int i = 1; i <= avan; i++) for (int w = 1; w <= m; w++)
@@ -42,7 +42,7 @@ int main() {
 			r = 1 + (y + lastans - 1) % n;
 			if (l > r) swap(l, r);
 			copy();
-			bag();
+			bag01();
 			lastans = 0;
 			int ans = 0;
 			for (int i = 1; i <= m; i++) {

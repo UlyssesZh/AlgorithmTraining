@@ -31,6 +31,21 @@
       <sourceFolder url="file://$MODULE_DIR$/graphs/toposort" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/graphs/sortall" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/graphs/windowpains" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/graphs/criticalpath" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/graphs/doorman" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/graphs/playonwords" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/numtower" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/largestsubsum" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/lis" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/lcs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/largestpalin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/mincoin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/coincomb2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/coincomb" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/bag01" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/bagcomplete" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/stonemerge" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/cheappalin" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

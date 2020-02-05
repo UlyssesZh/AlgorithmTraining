@@ -19,7 +19,7 @@ public class windowpains {
 		new HashSet<>(Arrays.asList(6)),
 		new HashSet<>(Arrays.asList(6, 7)),
 		new HashSet<>(Arrays.asList(7, 8)),
-		new HashSet<>(Arrays.asList(8)),
+		new HashSet<>(Arrays.asList(8))
 	};
 	private static int[] inDegrees;
 	private static Set<Integer>[] outs;

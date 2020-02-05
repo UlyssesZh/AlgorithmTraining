@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+	<title>Problem: Party Lamps</title>
+</head>
+<body>
+<div style="text-align: center"><h1>Problem: Party Lamps</h1><b>IOI'96</b></div>
+<p>The structure of some biological objects is represented by the
+	sequence of their constituents, where each part is denoted by an
+	uppercase letter. Biologists are interested in decomposing a long
+	sequence into shorter sequences called <i>primitives</i>.
+
+<p>We say that a sequence <b>S</b> can be composed from a given set of primitives
+	<b>P</b> if there is a some sequence of (possibly repeated) primitives from
+	the set whose concatenation equals S.  Not necessarily all primitives
+	need be present. For instance the sequence <TT>ABABACABAAB</TT>can be
+	composed from the set of primitives <pre>
+	   {A, AB, BA, CA, BBC}
+</pre>
+
+<p>The first K characters of S are the <i>prefix of S with length
+	K</i>.  Write a program which accepts as input a set of primitives and
+	a sequence of constituents and then computes the length of the longest
+	prefix that can be composed from primitives.
+
+<h3>PROGRAM NAME: prefix</h3>
+
+<h3>INPUT FORMAT</h3>
+
+First, the input file contains the list (length 1..200) of primitives
+(length 1..10) expressed as a series of space-separated strings of
+upper-case characters on one or more lines. The list of primitives is
+terminated by a line that contains nothing more than a period (`.').
+No primitive appears twice in the list.
+
+Then, the input file contains a sequence S (length 1..200,000)
+expressed as one or more lines, none of which exceeds 76 letters
+in length. The "newlines" (line terminators) are not part of the
+string S.
+
+<h3>SAMPLE INPUT (file prefix.in) </h3>
+
+<pre>
+A AB BA CA BBC
+.
+ABABACABAABC
+</pre>
+
+<h3>OUTPUT FORMAT</h3>
+
+A single line containing an integer that is the length of the longest
+prefix that can be composed from the set P.
+
+<h3>SAMPLE OUTPUT (file prefix.out)</h3>
+
+<pre>
+11
+</pre>
+<p><a href="_analysis.html">The analysis</a></p>
+<p><a href="../../../index.html">Training Gateway</a></p>
+</body>
+</html>
