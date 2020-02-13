@@ -11,18 +11,39 @@ public class nocows {
 	private static void actualMain() {
 		int n = scanner.nextInt();
 		int k = scanner.nextInt();
-		int[][] dp = new int[n + 1][k + 1];
-		dp[1][1] = 1;
-		for (int i = 3; i <= n; i += 2) {
-			for (int j = 1; j <= i - 2; j += 2) {
-				for (int l = 1; l < k; l++) {
-					for (int m = 1; m <= l; m++) {
-						dp[i][l + 1] += 2 * dp[j][l] * dp[i - j - 1][m];
+		// int[][] dp = new int[maxI][k];
+		// dp[i][j] means ans at 2i+1 nodes and j+1 layers
+		// max layer num is k, max j is k-1
+		// so max node num is 2**(k+1)-1
+		// so max i is 2**k-1
+		int[][] dp = new int[n][k];
+		dp[0][0] = 1;
+		// dp[i1+i2+1][max(j1,j2)+1] += dp[i1][j1] * dp[i2][j2]
+		/*for (int i1 = 0; i1 < n / 2; i1++)
+			for (int i2 = 0; i2 < n / 2; i2++)
+				for (int j1 = 0; j1 < k - 1; j1++)
+					for (int j2 = 0; j2 < k - 1; j2++) {
+						int i = i1 + i2 + 1;
+						int j = Math.max(j1, j2) + 1;
+						dp[i][j] += dp[i1][j1] * dp[i2][j2];
+						out.printf("dp[%d][%d] = %d\n", 2*i+1, j+1, dp[i][j]);
+					}*/
+		for (int j = 1; j < k; j++) { // start from 2nd layer
+			int j1 = j - 1; // j = max(j1, j2) + 1
+			int maxI = Math.min(1 << j, n / 2 + 1);
+			for (int i = j; i <= maxI; i++) { // start from 2*(j+1)-1 nodes
+				for (int i1 = 0; i1 < i; i1++) {
+					int i2 = i - i1 - 1; // i = i1 + i2 + 1
+					for (int j2 = 0; j2 < j; j2++) {
+						dp[i][j] += dp[i1][j1] * dp[i2][j2];
+						if (i1 != i2 || j1 != j2)
+							dp[i][j] += dp[i1][j2] * dp[i2][j1];
+						dp[i][j] %= 9901;
 					}
 				}
 			}
 		}
-		out.println(dp[n][k]);
+		out.println(dp[n / 2][k - 1]);
 	}
 	
 	private static InputStream in;

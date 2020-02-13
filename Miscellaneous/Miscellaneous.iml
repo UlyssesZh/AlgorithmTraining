@@ -46,6 +46,14 @@
       <sourceFolder url="file://$MODULE_DIR$/dp/bagcomplete" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/dp/stonemerge" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/dp/cheappalin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/anparty" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/computer" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/goodnum" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/goodnum2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/cornfields" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/tsp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dp/travelling" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/graphs/fordfulkerson" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -2,7 +2,7 @@
 int T, n;
 struct node {
 	int i;
-	node* son;
+	node* child;
 } root = {1, nullptr};
 bool connected[100005], trial[100005];
 node* tree[100005] = {nullptr, &root};
@@ -21,7 +21,7 @@ int main() {
 				v = t;
 			}
 			*tree[v] = {v, nullptr};
-			tree[u]->son = tree[v];
+			tree[u]->child = tree[v];
 		}
 	}
 }
