@@ -54,6 +54,8 @@
       <sourceFolder url="file://$MODULE_DIR$/dp/tsp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/dp/travelling" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/graphs/fordfulkerson" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/graphs/pigs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/graphs/ditches" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
