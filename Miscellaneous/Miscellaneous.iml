@@ -56,6 +56,7 @@
       <sourceFolder url="file://$MODULE_DIR$/graphs/fordfulkerson" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/graphs/pigs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/graphs/ditches" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/graphs/milking" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
